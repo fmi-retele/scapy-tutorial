@@ -54,13 +54,23 @@ dhcp.show()
 
 #### Send functions @ data link layer
 The [sendp()](http://www.secdev.org/projects/scapy/doc/usage.html#sending-packets) function will work at layer 2. It’s up to you to choose the right interface and the right link layer protocol.
--- sendp            : Send packets at layer 2
--- srp              : Send and receive packets at layer 2
--- srp1             : Send and receive packets at layer 2 and return only the first answer
--- srploop          : Send a packet at layer 2 in loop and print the answer each time
-
+- sendp            : Send packets at layer 2
+- srp              : Send and receive packets at layer 2
+- srp1             : Send and receive packets at layer 2 and return only the first answer
+- srploop          : Send a packet at layer 2 in loop and print the answer each time
 ```
 sendp(Ether()/IP(dst="1.2.3.4",ttl=(1,4)), iface="eth1")
-srp(Ether()/
+answered, unanswered = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst="192.168.1.0/24"),timeout=2)
+```
+
+#### Send functions @ network layer
+The [send()](http://www.secdev.org/projects/scapy/doc/usage.html#sending-packets) will send packets at layer 3. That is to say it will handle routing and layer 2 for you.
+- send             : Send packets at layer 3
+- sr               : Send and receive packets at layer 3
+- sr1              : Send packets at layer 3 and return only the first answer
+- srloop           : Send a packet at layer 3 in loop and print the answer each time
+```
+send(IP(dst="1.2.3.4")/ICMP())
+answered, unanswered = sr(IP(dst="192.168.*.1-10")/UDP(dport=0))
 ```
 
