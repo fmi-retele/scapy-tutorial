@@ -51,7 +51,7 @@ bootp.show()
 dhcp = DHCP()
 dhcp.show()
 ```
-#### Send functions @ data link layer
+#### Building packets
 To construct a packet, [stack](http://www.secdev.org/projects/scapy/doc/usage.html#stacking-layers) the layers using the / operator:
 
 ```
