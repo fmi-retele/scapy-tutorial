@@ -51,6 +51,13 @@ bootp.show()
 dhcp = DHCP()
 dhcp.show()
 ```
+#### Send functions @ data link layer
+To construct a packet, [stack](http://www.secdev.org/projects/scapy/doc/usage.html#stacking-layers) the layers using the / operator:
+
+```
+packet = eth / ip / udp
+send(packet)
+```
 
 #### Send functions @ data link layer
 The [sendp()](http://www.secdev.org/projects/scapy/doc/usage.html#sending-packets) function will work at layer 2. It’s up to you to choose the right interface and the right link layer protocol.
