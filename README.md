@@ -1,6 +1,7 @@
 ##### Requirements:
 - use any linux or use the [Ubuntu x64 vbox machine](https://github.com/fmi-retele/vbox-scapy/releases/download/v1/osbox.vdi.tar.gz)
 - check that you have [scapy](http://www.secdev.org/projects/scapy/) installed
+- check additional [scapy resources](https://thepacketgeek.com/scapy-p-11-scapy-resources/)
 
 ### View different protocol headers 
 
