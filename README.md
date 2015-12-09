@@ -1,6 +1,7 @@
 ##### Requirements:
 - use any linux or use the [Ubuntu x64 vbox machine](https://github.com/fmi-retele/vbox-scapy/releases/download/v1/osbox.vdi.tar.gz)
 - check that you have [scapy](http://www.secdev.org/projects/scapy/) installed
+- [scapy docs](www.secdev.org/projects/scapy/doc/usage.html)
 - check additional [scapy resources](https://thepacketgeek.com/scapy-p-11-scapy-resources/)
 
 ### View different protocol headers 
@@ -50,3 +51,16 @@ bootp.show()
 dhcp = DHCP()
 dhcp.show()
 ```
+
+#### Send functions @ data link layer
+The [sendp()](http://www.secdev.org/projects/scapy/doc/usage.html#sending-packets) function will work at layer 2. It’s up to you to choose the right interface and the right link layer protocol.
+-- sendp            : Send packets at layer 2
+-- srp              : Send and receive packets at layer 2
+-- srp1             : Send and receive packets at layer 2 and return only the first answer
+-- srploop          : Send a packet at layer 2 in loop and print the answer each time
+
+```
+sendp(Ether()/IP(dst="1.2.3.4",ttl=(1,4)), iface="eth1")
+srp(Ether()/
+```
+
