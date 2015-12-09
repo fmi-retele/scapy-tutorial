@@ -1,5 +1,8 @@
+##### Requirements:
+- use any linux or use the [Ubuntu x64 vbox machine](https://github.com/fmi-retele/vbox-scapy/releases/download/v1/osbox.vdi.tar.gz)
+- check that you have [scapy](http://www.secdev.org/projects/scapy/) installed
 
-### Sample script to view different protocol headers 
+### View different protocol headers 
 
 ```
 import scapy
